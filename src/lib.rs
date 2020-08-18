@@ -4,7 +4,7 @@ pub struct Stack<T> {
 
 impl<T> Stack<T> {
     pub fn new() -> Self {
-        Stack {
+        Self {
             items: Vec::new(),
         }
     }
@@ -21,7 +21,7 @@ impl<T> Stack<T> {
         self.items.last()
     }
 
-    pub fn is_empty(self) -> bool {
+    pub fn is_empty(&self) -> bool {
         self.items.len() == 0
     }
 }

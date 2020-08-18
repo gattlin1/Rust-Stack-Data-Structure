@@ -12,7 +12,7 @@ fn main() {
     orders.push("Omakase special");
 
     // Check to see what is at the top of the stack
-    if orders.peek() != "McDonalds Happy Meal" {
+    if orders.peek() != Some(&"McDonalds Happy Meal") {
         println!("We're not eating cheap tonight.")
     }
 
@@ -23,8 +23,8 @@ fn main() {
     println!("Is the stack empty?    {}", orders.is_empty());
 
     // Removing all of the orders in the stack
-    while !orders.is_empty() {
-        println!(orders.pop());
+    while !&orders.is_empty() {
+        println!("{:?}", orders.pop());
     }
 
     if orders.is_empty() {
