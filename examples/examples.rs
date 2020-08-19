@@ -12,7 +12,7 @@ fn main() {
     orders.push("Omakase special");
 
     // Check to see what is at the top of the stack
-    if orders.peek() != Some(&"McDonalds Happy Meal") {
+    if orders.peek().unwrap() != &"McDonalds Happy Meal" {
         println!("We're not eating cheap tonight.")
     }
 

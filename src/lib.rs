@@ -40,7 +40,7 @@ mod tests {
     fn push() {
         let mut st = Stack::new();
         st.push(21);
-        assert_eq!(Some(&21), st.peek());
+        assert_eq!(&21, st.peek().unwrap());
         assert_eq!(false, st.is_empty());
     }
 
@@ -48,14 +48,14 @@ mod tests {
     fn pop() {
         let mut st = Stack::new();
         st.push("pop test".to_string());
-        assert_eq!(Some("pop test".to_string()), st.pop());
+        assert_eq!("pop test".to_string(), st.pop().unwrap());
     }
 
     #[test]
     fn peek() {
         let mut st = Stack::new();
         st.push(6.3);
-        assert_eq!(Some(&6.3), st.peek());
+        assert_eq!(&6.3, st.peek().unwrap());
     }
 
     #[test]
